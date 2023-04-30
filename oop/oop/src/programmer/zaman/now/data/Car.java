@@ -1,14 +1,21 @@
 package programmer.zaman.now.data;
 
-public interface Car {
+public interface Car extends HasBrand, IsMaintenance {
     //ex. method abstract dari interface
     void drive();
     int getTire();
+
+    //sejak java v.8, kita bisa membuat default method konkrit
+    //di interface
+    default boolean isBig(){
+        return true;
+    }
 }
 //dalam membuat interface, methodnya sudah ter-default
 //menjadi "public" dan "abstract"
 
-//dan method yang dibuat pasti tanpa block "{ }"
+//dan method yang dibuat pasti tanpa block "{ }", kecuali dengan
+//prefix default dan harus membuat konkrit methodnya.
 //juga hanya diperbolehkan membuat const field "final"
 //(tidak bisa diubah)
 

@@ -10,4 +10,19 @@ public class Avanza implements Car{
     public int getTire(){
         return 4;
     }
+
+    //method ini dari parent interface si car yaitu
+    //interface HasBrand
+    public String getBrand(){
+        return "Toyota";
+    }
+    public boolean isMaintenance(){
+        return true;
+    }
+
+    //ini default method dari interface car
+    //boleh ditulis atau tidak
+    public boolean isBig(){
+        return true;
+    }
 }

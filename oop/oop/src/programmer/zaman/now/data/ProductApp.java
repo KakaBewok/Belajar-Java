@@ -11,5 +11,14 @@ public class ProductApp {
         //tidak bisa diakses karena diluar class product itu sendiri
         //private hanya bisa diakses di class yang sama.
         System.out.println(product.price);
+
+
+        //mencoba method override equals di file product.java
+        Product product2 = new Product("Mac Book Pro", 30_000_000);
+        System.out.println(product.equals(product2));
+
+        //mencoba method override hashCode() di file product.java
+        System.out.println(product.hashCode() == product2.hashCode());
+
     }
 }
