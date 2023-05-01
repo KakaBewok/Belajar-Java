@@ -1,10 +1,13 @@
 package programmer.zaman.now.application;
 
+import programmer.zaman.now.annotation.Fancy;
 import programmer.zaman.now.data.LoginRequest;
 import programmer.zaman.now.error.ValidationException;
 import programmer.zaman.now.util.ValidationUtil;
 
+
 public class ValidationApp {
+    @Fancy(name = "ValidationApp", tags = {"application", "java"})
     public static void main(String[] args) {
         LoginRequest loginRequest = new LoginRequest(null, null);
 
@@ -22,7 +25,18 @@ public class ValidationApp {
         finally {
             System.out.println("Error/gak ini akan dieksekusi");
         }
+
+        //implementasi runtime exception
+        //kalo runtime tidak wajib pake try catch
+        LoginRequest loginRequest2 = new LoginRequest(null, null);
+        ValidationUtil.validateRuntime(loginRequest2);
+
     }
 }
 //kalo errornya dua jenis,
 //berarti catchnya ada dua block
+
+//ada 3 jenis exception
+//1. checked
+//2. runtime
+//3. error (not recommended u/ try catch)
